@@ -47,7 +47,7 @@ class MenuUI extends JPanel {
                     case KeyEvent.VK_ENTER, KeyEvent.VK_SPACE -> {
                         removeKeyListener(this); // Remove menu listener on "Enter"
                         if (menuSelection == 0) {
-                            game = new GameController(); // Random numbers mode //ToDo Testing Random
+                            game = new GameController(); // Random numbers mode
                         } else {
                             int[] customSequence = {5, 5, 5, 5, 2, 3, 4, 1, 5, 1, 4}; // Example sequence
                             game = new GameController(customSequence); // Sequence mode //ToDo Testing Sequence
@@ -65,7 +65,7 @@ class MenuUI extends JPanel {
         // Action listeners for buttons
         randomButton.addActionListener(e -> {
             removeKeyListener(menuKeyListener); // Remove menu listener for button interaction
-            game = new GameController(); // Random numbers mode //ToDo
+            game = new GameController(); // Random numbers mode
             frame.switchPanel(new ColumnGameUI(frame, game)); //test
         });
 

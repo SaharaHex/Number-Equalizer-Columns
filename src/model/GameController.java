@@ -29,6 +29,34 @@ public class GameController implements Game {
             return numberSequence[sequenceIndex++];
         } else {
             // Default to random number if no sequence or sequence ends
+            return nextNumber();
+        }
+    }
+
+    private int nextNumber() {
+        int highest = 0, lowest = 0, nonZeroCount = 0;
+        for (int i = 0; i < columns.length; i++) {
+            if (columns[i].getTotal() > highest) {
+                highest = columns[i].getTotal();
+                if (lowest == 0)
+                    lowest = highest;
+            }
+            if (columns[i].getTotal() != 0) {
+                nonZeroCount++;
+                if (columns[i].getTotal() < lowest)
+                    lowest = columns[i].getTotal();
+            }
+        }
+        System.out.println("Highest: " + highest + ", Lowest: " + lowest);
+        if (nonZeroCount == 4) {
+            // Return a random number between lowest and highest
+            int newNumber = Math.min(10, (int) (Math.random() * (highest - lowest + 1)));
+            if (newNumber == 0) {
+                System.out.println("Generated number was 0");
+                newNumber = highest - lowest;
+            }
+            return newNumber;
+        } else {
             return (int) (Math.random() * 10) + 1;
         }
     }
