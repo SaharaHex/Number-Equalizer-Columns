@@ -7,8 +7,7 @@ public class DisplayHelper{
     public static Color lightYellow () {
         return new Color(255, 253, 85);
     }
-    public static Color lightGreen () { return new Color(34, 139, 34);
-    }
+    public static Color lightGreen () { return new Color(34, 139, 34); }
     public static void styleButton(JButton button) {
         button.setFont(new Font("Arial", Font.BOLD, 18));
         button.setBackground(Color.DARK_GRAY);
@@ -45,10 +44,11 @@ public class DisplayHelper{
         return controlsPanel;
     }
 
-    public static JPanel createTopButtonPanel(JButton buttonWest, JButton buttonEast) {
+    public static JPanel createTopButtonPanel(JButton buttonWest, JButton buttonEast, JLabel gameMessage) {
         JPanel buttonPanel = new JPanel(new BorderLayout());
         buttonPanel.add(buttonWest, BorderLayout.WEST); // Position button on the left
         buttonPanel.add(buttonEast, BorderLayout.EAST); // Position button on the right
+        buttonPanel.add(gameMessage, BorderLayout.CENTER); // Position Message in the middle
         return buttonPanel;
     }
     public static JPanel createStatsPanel(JLabel imageLabel, JLabel statsMessage) {

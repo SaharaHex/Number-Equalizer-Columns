@@ -27,8 +27,11 @@ class ColumnGameUI extends JPanel {
 
         JPanel topPanel = new JPanel(new BorderLayout());
 
-        JLabel numberLabel = new JLabel("Current Number: " + game.getNumber(), SwingConstants.CENTER);
-        numberLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        JLabel gameLabel = new JLabel("Current Number", SwingConstants.CENTER);
+        gameLabel.setFont(new Font("Arial", Font.BOLD, 24));
+
+        JLabel numberLabel = new JLabel(">> " + game.getNumber() + " <<", SwingConstants.CENTER);
+        numberLabel.setFont(new Font("Arial", Font.BOLD, 30));
         numberLabel.setForeground(lightGreen()); // Set colour
 
         JButton menuButton = new JButton("Menu");
@@ -38,7 +41,7 @@ class ColumnGameUI extends JPanel {
         styleButton(exitButton);
 
         // Add button panel to the top center
-        topPanel.add(createTopButtonPanel(menuButton, exitButton), BorderLayout.NORTH);
+        topPanel.add(createTopButtonPanel(menuButton, exitButton, gameLabel), BorderLayout.NORTH);
         topPanel.add(numberLabel, BorderLayout.CENTER);
 
         JPanel buttonPanel = new JPanel();
@@ -139,6 +142,6 @@ class ColumnGameUI extends JPanel {
         }
 
         // Update the number label
-        numberLabel.setText("Current Number: " + game.getNumber());
+        numberLabel.setText(">> " + game.getNumber() + " <<");
     }
 }
