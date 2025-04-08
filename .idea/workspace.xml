@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f20c0726-67e7-435f-a22e-6414d536f5eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/model/SequenceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/SequenceProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/MenuUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MenuUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -81,6 +82,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Number_Equalizer_Columns$Main.ic" NAME="Main Coverage Results" MODIFIED="1744042598659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Number_Equalizer_Columns$Main.ic" NAME="Main Coverage Results" MODIFIED="1744118619137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

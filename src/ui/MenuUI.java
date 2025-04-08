@@ -1,12 +1,16 @@
 package ui;
 
 import model.GameController;
+import model.SequenceController;
+import model.SequenceProvider;
+
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Map;
 
 import static ui.DisplayHelper.*;
 
@@ -49,8 +53,8 @@ class MenuUI extends JPanel {
                         if (menuSelection == 0) {
                             game = new GameController(); // Random numbers mode
                         } else {
-                            int[] customSequence = {5, 5, 5, 5, 2, 3, 4, 1, 5, 1, 4}; // Example sequence
-                            game = new GameController(customSequence); // Sequence mode //ToDo Testing Sequence
+                            Map.Entry<String, int[]> customSequence = getCustomSequence();
+                            game = new GameController(customSequence.getValue()); // Sequence mode
                         }
                         remove(menuPanel);
                         frame.switchPanel(new ColumnGameUI(frame, game)); //Load game
@@ -71,12 +75,18 @@ class MenuUI extends JPanel {
 
         sequenceButton.addActionListener(e -> {
             removeKeyListener(menuKeyListener); // Remove menu listener for button interaction
-            int[] customSequence = {5, 5, 5, 5, 2}; // Example sequence
-            game = new GameController(customSequence); // Sequence mode //ToDo
+            Map.Entry<String, int[]> customSequence = getCustomSequence();
+            game = new GameController(customSequence.getValue()); // Sequence mode
             frame.switchPanel(new ColumnGameUI(frame, game)); //test
         });
 
         setFocusable(true);
         SwingUtilities.invokeLater(this::requestFocusInWindow); // Asynchronously request focus
+    }
+
+    private static Map.Entry<String, int[]> getCustomSequence() {
+        // Create an instance of Sequence through the SequenceProvider interface
+        SequenceProvider sequenceProvider = new SequenceController();
+        return sequenceProvider.getRandomSeed();
     }
 }
