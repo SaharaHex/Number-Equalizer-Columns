@@ -54,7 +54,7 @@ class MenuUI extends JPanel {
                             game = new GameController(); // Random numbers mode
                         } else {
                             Map.Entry<String, int[]> customSequence = getCustomSequence();
-                            game = new GameController(customSequence.getValue()); // Sequence mode
+                            game = new GameController(customSequence.getValue(), customSequence.getKey()); // Sequence mode
                         }
                         remove(menuPanel);
                         frame.switchPanel(new ColumnGameUI(frame, game)); //Load game
@@ -76,7 +76,7 @@ class MenuUI extends JPanel {
         sequenceButton.addActionListener(e -> {
             removeKeyListener(menuKeyListener); // Remove menu listener for button interaction
             Map.Entry<String, int[]> customSequence = getCustomSequence();
-            game = new GameController(customSequence.getValue()); // Sequence mode
+            game = new GameController(customSequence.getValue(), customSequence.getKey()); // Sequence mode
             frame.switchPanel(new ColumnGameUI(frame, game)); //test
         });
 

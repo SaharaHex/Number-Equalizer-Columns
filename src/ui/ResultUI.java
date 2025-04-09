@@ -23,7 +23,13 @@ public class ResultUI extends JPanel{
         winMessage.setForeground(lightGreen()); // Set colour
         winMessage.setPreferredSize(new Dimension(600, 50));
 
-        JLabel statsMessage = new JLabel("<html>Number of Moves: " + game.getTotalTurns() + "<br></html>", SwingConstants.CENTER);
+        String sequenceSeedText = (game.getSequenceSeed() != null && !game.getSequenceSeed().isEmpty()) ? " (" + game.getSequenceSeed() + ")": "";
+        JLabel modeMessage = new JLabel("Game Mode: " + game.getGameMode() + sequenceSeedText, SwingConstants.CENTER);
+        modeMessage.setFont(new Font("Arial", Font.BOLD, 20));
+        modeMessage.setPreferredSize(new Dimension(600, 50));
+
+        JLabel statsMessage = new JLabel("<html>Number of Moves: " + game.getTotalTurns()
+                + "<br>Columns Balanced at: " + game.getColumnBalance() + "</html>", SwingConstants.CENTER);
         statsMessage.setFont(new Font("Arial", Font.BOLD, 20));
         statsMessage.setForeground(Color.BLACK);
         statsMessage.setPreferredSize(new Dimension(300, 200));
@@ -43,6 +49,7 @@ public class ResultUI extends JPanel{
         menuPanel.add(winMessage);
         menuPanel.add(playAgainButton);
         menuPanel.add(exitButton);
+        menuPanel.add(modeMessage);
 
         add(menuPanel, BorderLayout.NORTH);
         add(createStatsPanel(gifLabel,statsMessage),BorderLayout.SOUTH);
@@ -54,23 +61,18 @@ public class ResultUI extends JPanel{
             @Override
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
-                    case KeyEvent.VK_UP:
-                    case KeyEvent.VK_W:
-                        menuSelection = (menuSelection == 0) ? 1 : 0; // Move up in the menu
-                        break;
-                    case KeyEvent.VK_DOWN:
-                    case KeyEvent.VK_S:
-                        menuSelection = (menuSelection == 1) ? 0 : 1; // Move down in the menu
-                        break;
-                    case KeyEvent.VK_ENTER:
-                    case KeyEvent.VK_SPACE:
+                    case KeyEvent.VK_UP, KeyEvent.VK_W ->
+                            menuSelection = (menuSelection == 0) ? 1 : 0; // Move up in the menu
+                    case KeyEvent.VK_DOWN, KeyEvent.VK_S ->
+                            menuSelection = (menuSelection == 1) ? 0 : 1; // Move down in the menu
+                    case KeyEvent.VK_ENTER, KeyEvent.VK_SPACE -> {
                         removeKeyListener(this); // Remove menu listener on "Enter"
                         if (menuSelection == 0) {
                             restartGame(frame);
                         } else {
                             System.exit(0);
                         }
-                        break;
+                    }
                 }
                 updateMenuHighlight(menuSelection, playAgainButton, exitButton);
             }

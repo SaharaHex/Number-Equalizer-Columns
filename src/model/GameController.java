@@ -5,20 +5,26 @@ public class GameController implements Game {
     private int currentColumn;
     private int number; // The current generated number
     private int turns;
-    private int[] numberSequence; // Optional sequence of numbers
+    private final int[] numberSequence; // Optional sequence of numbers
     private int sequenceIndex;   // Index to track the current position in the sequence
+    private GameMode gameMode = GameMode.RANDOM;
+    private int columnBalance;
+    private final String sequenceSeed;
 
     public GameController() {
-        this(null); // Default to random numbers if no sequence is provided
+        this(null, ""); // Default to random numbers if no sequence is provided
     }
 
-    public GameController(int[] numberSequence) {
+    public GameController(int[] numberSequence, String seed) {
         columns = new Column[4];
         for (int i = 0; i < 4; i++) {
             columns[i] = new Column();
         }
         currentColumn = 0;
         this.numberSequence = numberSequence;
+        if (numberSequence != null)
+            gameMode = GameMode.SEQUENCE;
+        sequenceSeed = seed;
         sequenceIndex = 0;
         number = generateNumber();
     }
@@ -35,16 +41,16 @@ public class GameController implements Game {
 
     private int nextNumber() {
         int highest = 0, lowest = 0, nonZeroCount = 0;
-        for (int i = 0; i < columns.length; i++) {
-            if (columns[i].getTotal() > highest) {
-                highest = columns[i].getTotal();
+        for (Column column : columns) {
+            if (column.getTotal() > highest) {
+                highest = column.getTotal();
                 if (lowest == 0)
                     lowest = highest;
             }
-            if (columns[i].getTotal() != 0) {
+            if (column.getTotal() != 0) {
                 nonZeroCount++;
-                if (columns[i].getTotal() < lowest)
-                    lowest = columns[i].getTotal();
+                if (column.getTotal() < lowest)
+                    lowest = column.getTotal();
             }
         }
         System.out.println("Highest: " + highest + ", Lowest: " + lowest);
@@ -80,6 +86,7 @@ public class GameController implements Game {
     @Override
     public boolean checkWin() {
         int total = columns[0].getTotal();
+        columnBalance = total;
         for (Column column : columns) {
             if (column.getTotal() != total) {
                 return false;
@@ -91,6 +98,11 @@ public class GameController implements Game {
     @Override
     public void turnNumber() {
         turns += 1;
+    }
+
+    @Override
+    public GameMode getGameMode() {
+        return this.gameMode;
     }
 
     public int[] getColumnTotals() {
@@ -112,4 +124,13 @@ public class GameController implements Game {
     public int getTotalTurns() {
         return turns;
     }
+
+    public int getColumnBalance() {
+        return columnBalance;
+    }
+
+    public String getSequenceSeed() {
+        return sequenceSeed;
+    }
+
 }

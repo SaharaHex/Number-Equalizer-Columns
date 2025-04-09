@@ -6,4 +6,5 @@ public interface Game {
     void dropNumber();
     boolean checkWin();
     void turnNumber();
+    GameMode getGameMode();
 }

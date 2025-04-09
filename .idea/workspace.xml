@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f20c0726-67e7-435f-a22e-6414d536f5eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/model/GameMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ColumnGameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ColumnGameUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/DisplayHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/DisplayHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/MenuUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MenuUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ResultUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ResultUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +19,7 @@
       <list>
         <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -24,6 +28,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2uu1GmKMnAuZVkTjgULUsAtdLg9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -81,6 +88,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Number_Equalizer_Columns$Main.ic" NAME="Main Coverage Results" MODIFIED="1744134356325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Number_Equalizer_Columns$Main.ic" NAME="Main Coverage Results" MODIFIED="1744156952122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
