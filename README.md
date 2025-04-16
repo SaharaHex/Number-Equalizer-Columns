@@ -8,3 +8,7 @@ It has logic in place to switch to check the Highest and Lowest numbers in the C
 It’s a text base display, with an easy interface for navigation.
 
 Different game features could be added to this project by building on the classes.
+
+## Recommended IDE Setup
+
+- [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download)

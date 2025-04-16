@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f20c0726-67e7-435f-a22e-6414d536f5eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/GameMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/MenuUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MenuUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ResultUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ResultUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +39,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mbari/IdeaProjects/bjssShop&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/Java/Number-Equalizer-Columns&quot;
   }
 }</component>
   <component name="RecentsManager">
